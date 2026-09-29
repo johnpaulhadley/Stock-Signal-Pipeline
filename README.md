@@ -4,6 +4,10 @@
 
 This project builds an end-to-end analytics pipeline that answers that question. It ingests daily stock prices and every financial statement filed with the SEC, cleans them, and scores each company on **value, quality and momentum** every trading day. It then backtests a $10M portfolio that follows those signals against simply holding the S&P 500 (SPY). Results are served to a Tableau dashboard, alongside a second dashboard that monitors the pipeline's own health.
 
+   **[View the live dashboard on Tableau Public](https://public.tableau.com/app/profile/john.hadley1222/viz/StockSignalPipeline/SignalsPerformance?publish=yes)**
+
+   ![Signals & Performance dashboard](images/dashboard.png)
+
 > Analytical portfolio project, not investment advice.
 
 ## Architecture
