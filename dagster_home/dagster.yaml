@@ -1,0 +1,7 @@
+# Point DAGSTER_HOME at this folder so run history survives restarts.
+# One run at a time: DuckDB allows a single writer, and it keeps Yahoo/SEC downloads polite.
+concurrency:
+  runs:
+    max_concurrent_runs: 1
+telemetry:
+  enabled: false

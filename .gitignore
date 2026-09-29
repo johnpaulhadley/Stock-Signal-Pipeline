@@ -1,0 +1,9 @@
+data/
+.venv/
+__pycache__/
+.tmp_dagster_home*/
+*.duckdb
+*.duckdb.wal
+.DS_Store
+dagster_home/*
+!dagster_home/dagster.yaml
