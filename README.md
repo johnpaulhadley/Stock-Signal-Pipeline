@@ -8,7 +8,28 @@ This project builds an end-to-end analytics pipeline that answers that question.
 
    ![Signals & Performance dashboard](images/dashboard.png)
 
-> Analytical portfolio project, not investment advice.
+## Results
+
+**Following the signals would have turned $10M into $58.6M, vs $44.0M for simply holding the S&P 500** (Oct 2015 – Aug 2026, before trading costs).
+
+| | Signal strategy | S&P 500 (SPY) |
+|---|---|---|
+| Ending value of $10M | **$58.6M** | $44.0M |
+| Annualized return | **17.6%** | 14.5% |
+| Growth | 5.9× | 4.4× |
+
+**The strategy:** on the last trading day of each month, buy stocks that score in the top fifth on value, quality and momentum (each ranked within its own sector) and are trading above their 200-day average. Hold each one until it falls out of the top two-fifths. All holdings are equally weighted.
+
+**Scale:** 503 companies · 1.4M daily price rows · 155M SEC filing facts reduced to a 16K-row point-in-time table.
+
+**Data quality:** the monitor checked all 2,951 trading days since 2015 and flagged 11, all for a stock moving more than 50% in one day. Each was reviewed and matched a real market event, not a data error.
+
+### How much to trust this
+
+- **Survivorship bias (the biggest caveat).** The stock universe is *today's* S&P 500, so companies that were removed or went bankrupt are missing. That flatters the strategy, while the SPY benchmark includes them. Part of the 3.1-point annual edge is likely this bias. The fix is a point-in-time list of index members.
+- **No trading costs or taxes.** Both would reduce the edge.
+- **One market period.** 2015–2026 was mostly a bull market. Beating the index for 11 years is encouraging, not proof it would continue.
+- **Approximate Q4 earnings.** Companies never report Q4 on its own, so Q4 is derived as full year minus Q1–Q3, which is slightly off when share counts change during the year.
 
 ## Architecture
 
